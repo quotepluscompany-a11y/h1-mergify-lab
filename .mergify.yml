@@ -1,0 +1,20 @@
+pull_request_rules:
+  - name: h1 fork consent TEST
+    conditions:
+      - from-fork
+      - head = h1-fork-consent-probe
+      - head-repo-full-name = claudevalen317-code/h1-mergify-lab
+      - "#commits-behind > 0"
+    actions:
+      update:
+        bot_account: claudevalen317-code
+
+  - name: h1 fork consent CONTROL
+    conditions:
+      - from-fork
+      - head = h1-fork-consent-control
+      - head-repo-full-name = claudevalen317-code/h1-mergify-lab
+      - "#commits-behind > 0"
+    actions:
+      update:
+        bot_account: claudevalen317-code
